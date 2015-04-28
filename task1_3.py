@@ -55,6 +55,31 @@ def search_insert(list1,list2,x):
     list2.insert(k,x)
   return list2
 
+def del_odd(list):
+  list2 = []
+  for s in list:
+    if len(s)%2==0:
+      list2.append(s)
+  return list2
+
+def len_max_list(list):
+  prev = list[0]
+  list.append(list[-1]-1)
+  list_split = []
+  tmp_list = [prev]
+  max_len = 0
+  for l in list[1:]:
+    if l != prev+1:
+      if len(tmp_list) > max_len:
+        max_len = len(tmp_list)
+        max_list = tmp_list
+      tmp_list = []        
+    tmp_list.append(l)
+    prev = l
+    
+
+  return max_list
+
 a = [1,5,6,5,3,3,3,2,23,4,55,2]
 print "N1"
 print a
@@ -81,7 +106,17 @@ print insert_str(list,'ccc')
 list1 = [1,2,3,4,3,6,7,8,3]
 list2 = ['a','b','c','d','e']
 
-print "\nN5"
+print "\nN5 "
 print list1
 print list2
 print search_insert(list1,list2,3)
+
+list = ['asdf','bbb','ddd','1234','NG']
+print "\nN6"
+print list
+print del_odd(list)
+
+list = [1,2,5,5,6,7,9,1,11,12,3,13,14,15,16]
+print "\nN7"
+print list
+print len_max_list(list)
