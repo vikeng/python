@@ -20,19 +20,8 @@ def print_type_stat(list_var):
     print s + ' => ' + str(stat[s])
 
 def sort_end(str_list):
-  str_list2 = []
-
-  for s in str_list:
-    str_list2.append(s[::-1])
-
-  str_list2.sort()
-  
-  str_list3 = []
-  for s in str_list2:
-    str_list3.append(s[::-1])
-
-  return str_list3
-
+  str_list.sort(key = lambda x:x[-1])
+  return str_list
 
 def insert_str(list,str):
   f = 1
@@ -92,7 +81,7 @@ print a
 print_type_stat(a)
 
 
-a = ['Hello','yandex','gmail','python','RU']
+a = ['Hello5','yandex1','gmail3','python2','RU4']
 print "\nN3"
 print a
 print sort_end(a)
