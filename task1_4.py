@@ -15,6 +15,14 @@ def dict_merge(d1,d2):
     del d2[s]
   return dict(d1.items()+d2.items())
 
+def calc(op,a,b):
+  
+  return {'add':a+b,
+  'sub':a-b,
+  'mul':a*b,
+  'div':a/b
+  }[op]
+  
 
 def swap_dict(d):
   return dict([value,key] for key,value in d.iteritems())
@@ -36,6 +44,11 @@ print d2
 
 print dict_merge(d1,d2)
 
+print "Task 4_5"
+a,b = 6,3
+print 'a = ',a
+print 'b = ',b
+print calc('add',a,b)
 
 
 print "Task 4_6"
